@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Spawn.gd" type="Script" id=1]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://minion-2020s2-interacciones-simples-master/slice33x.png" type="Texture" id=3]
+
+[node name="Spawn" type="Position2D" groups=[
+"Spawn",
+]]
+position = Vector2( 141.653, 261.033 )
+script = ExtResource( 1 )
+npc = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
